@@ -19,7 +19,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
-      run: |
+      run: |                              # pipe is used to add more than one command.
         python -m pip install --upgrade pip
         pip install pytest
 
