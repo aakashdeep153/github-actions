@@ -1,0 +1,19 @@
+name: container workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+        images: [hello-world, alpine]
+    runs_on: ${{ matrix.os }}
+    steps:
+      - name: echo Docker details
+        runs: docker-info
+
+      - name: Run image on ${{ matrix.os }}
+        runs: docker run ${{ matrix.images }}
+  
