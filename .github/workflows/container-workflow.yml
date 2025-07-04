@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: echo Docker details
-        run: docker-info
+        run: docker info
 
       - name: Run image on ${{ matrix.os }}
         run: docker run ${{ matrix.images }}
