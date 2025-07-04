@@ -1,0 +1,28 @@
+name: push expression test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main:
+      - '!feature/*':
+
+  pull_request:
+    branches:
+      - main:
+    types:
+      - opened
+      - closed
+    paths_ignore:
+      - README.md
+
+
+
+jobs:
+  hello:
+  runs-on: ubuntu-latest
+
+  steps:
+    - run: echo this workflow is executed for event type - ${{ gitub.event_name }}
+   
+      
