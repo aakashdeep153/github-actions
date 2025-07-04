@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo "this workflow is executed for event type - ${{ gitub.event_name }}"
+    - run: echo "this workflow is executed for event type - ${{ gihtub.event_name }}"
    
       
